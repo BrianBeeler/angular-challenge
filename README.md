@@ -10,17 +10,17 @@
 
 - Modified the unit tests to be applicable to "events" (some unit tests fail due to late changes, didn't get a chance to fix those)
 
-- Completed:
-  -> Mongoose schema with requested fields. (One additional field for user, would like to change it two fields: 'poster', and 'updater')
-  -> List view for events, pulloing from Mongoose scheme with delete and view options (edit is an option from the detailed view)
-  -> Unit tests on controller
-  -> Add event route is actually called "Create". Just kept the nomenclature of the Yeoman app
-  -> Used angular for form validation (would like to refactor to use HTML validation if there's a chance)
-  -> Submit button is disabled while processing
-  -> Edit event route, and view with form validation
-  -> Custom validation to to ensure end date is after start date
-  -> ngAnimate is used when removeing from list view
-  -> event date is shown using a directive with isolate scope
+##Completed:
+  - Mongoose schema with requested fields. (One additional field for user, would like to change it two fields: 'poster', and 'updater')
+  - List view for events, pulloing from Mongoose scheme with delete and view options (edit is an option from the detailed view)
+  - Unit tests on controller
+  - Add event route is actually called "Create". Just kept the nomenclature of the Yeoman app
+  - Used angular for form validation (would like to refactor to use HTML validation if there's a chance)
+  - Submit button is disabled while processing
+  - Edit event route, and view with form validation
+  - Custom validation to to ensure end date is after start date
+  - ngAnimate is used when removeing from list view
+  - event date is shown using a directive with isolate scope
   Extra: Used bootstrap calendar 'datePicker' for date inputs
 
 Looking forward to reviewing the excersise with you! The Mean stack readme is below. 
