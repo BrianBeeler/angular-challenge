@@ -1,0 +1,37 @@
+<section ng-controller="EventsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Events</h1>
+  </div>
+  <div class="list-group">
+    <div ng-repeat="event in events" class="list-group-item">
+      
+      <div class="btn btn-primary pull-right" 
+           ui-sref="events.view({eventId: event._id})">
+              <i class="glyphicon"> View </i>
+      </div>
+
+      <div class="btn btn-primary pull-right" ng-click="remove(event);">
+        <i class="glyphicon glyphicon-trash"></i>
+      </div>
+  
+      <div>
+        <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="event.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="event.user.displayName"></span>
+        </small>
+        <h4 class="list-group-item-heading" ng-bind="event.title"></h4>
+        <p class="list-group-item-text" ng-bind="event.content"></p>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="alert alert-warning text-center" ng-if="events.$resolved && !events.length">
+    No events yet, why don't you <a ui-sref="events.create">create one</a>?
+  </div>
+  <div class="alert alert-warning text-center" ng-if="events.length">
+    Want to add a new event? <a ui-sref="events.create"> Create one here! </a>
+  </div>
+</section>

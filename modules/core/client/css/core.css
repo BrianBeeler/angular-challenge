@@ -35,3 +35,18 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+
+.ng-leave {
+  transition:0.75s;
+  opacity:1;
+}
+.ng-leave-active {
+  opacity:0;
+}
+.btn {
+  margin: 5px;
+}
+
+.fix-margin {
+  margin: 5px;
+}

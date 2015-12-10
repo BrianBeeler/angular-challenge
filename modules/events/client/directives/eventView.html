@@ -1,0 +1,32 @@
+  <section>
+  <div class="page-header">
+    <h1 ng-bind="event.title"></h1>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="event.created | date:'mediumDate'"></span>
+      by
+      <span ng-bind="event.user.displayName"></span> <br>
+      Updated on
+      <span ng-bind="event.updated | date: 'mediumDate'"></span>
+      by
+      <span ng-bind="event.user.displayName"></span>
+    </em>
+  </small>
+  <br>
+  <br>
+  <p ng-show='event.description' class="lead" ng-bind="event.description"></p>
+  <p ng-hide='event.description' class="lead" > No Description </p>
+  Featured:
+  <p ng-show='event.featured' class='lead'> Yes </p>
+  <p ng-hide='event.featured' class='lead'> No  </p>
+  Start Date:
+  <p class='lead' ng-bind="event.startDate | date:'mediumDate'" ></p>
+  End Date:
+  <p class='lead' ng-bind="event.endDate | date:'Date'"></p>
+  <div ng-show='event.category'>
+  Category:
+  <p  class='lead' ng-bind="event.category"></p>
+</div>
+</section>

@@ -1,0 +1,89 @@
+<section ng-controller="EventsController" ng-init="findOne();fixDates()">
+  <div class="page-header">
+    <h1>Edit Event</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="eventForm" id="eventForm" class="form-horizontal" ng-submit="update(eventForm.$valid)" novalidate>
+      <!-- Title -->
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="title">Title</label>
+          <input name="title" type="text" ng-model="event.title" id="title" class="form-control" placeholder="Title" required>
+          <div ng-messages="eventForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Event title is required.</p>
+          </div>
+        </div>
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" ng-model="event.description" 
+                  id="description" class="form-control" cols="30" rows="10" 
+                  placeholder="Description"></textarea>
+      </div>
+      <!-- Start Date -->
+      <div class="form-group" show-errors>
+          <label for='startDate'> Start Date </label>
+           <input
+              type="text" id="startDate" 
+              ng-model="event.startDate"
+              name="startDate"
+              class="form-control" 
+              datepicker-popup="MM-dd-yyyy" 
+              datepicker-append-to-body="true"
+              is-open="data.startIsOpen" 
+              ng-click="data.startIsOpen = true"
+              show-weeks='false'
+              placeholder="Select Start Date"
+              >
+      </div>
+        <!-- End Date -->
+        <div class="form-group" show-errors>
+          <label for='endDate'> End Date </label>
+           <input 
+              ng-model="event.endDate" 
+              type="text" id="endDate" 
+              name="endDate"
+              class="form-control" 
+              datepicker-popup="MM-dd-yyyy" 
+              datepicker-append-to-body="true"
+              is-open="data.endIsOpen" 
+              ng-click="data.endIsOpen = true"
+              show-weeks='false'
+              placeholder="Select End Date"
+              >
+        </div>
+        <!-- Featured -->
+        <div class="form-group">
+          <label for="featured">Featured 
+            <input type='checkbox' name="featured" ng-model="event.featured" id="featured" class="form-control"/>
+          </label>
+          <br>
+        </div>
+        <!-- Category -->
+        <div class="form-group">
+          <label for="category">Category</label>
+          <br>
+          <span> Select Category </span>
+          <input type="text"
+            name="category" ng-model="event.category" id="category" 
+            class="form-control">
+            <br> 
+        </div>
+
+        <!-- Error Display -->
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+
+        
+        <!-- Submit -->
+        <div class="form-group">
+          <input ng-hide='processing' type="submit" class="btn btn-default">
+          <button ng-show='processing' type="button" disabled class="btn btn-default"> 
+            Processing... 
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
